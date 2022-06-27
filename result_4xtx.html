@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>Result of 4xtx - Moira</title>
+		
+		<script type="text/javascript">backend = 'http://127.0.0.1'</script>
+
+		<!-- Bootstrap core CSS -->
+		<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css?v=2015.5.31" />		<!-- Bootstrap theme -->
+		<link type="text/css" rel="stylesheet" href="/css/bootstrap-theme.min.css?v=2015.5.31" />
+		<!-- Custom styles for this template -->
+		<link type="text/css" rel="stylesheet" href="/css/uoj-theme.css?v=2022.01.16" />		
+		<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
+		<script type="text/javascript" src="/js/jquery.min.js"></script>		
+		<!-- jQuery autosize -->
+		<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>		<script type="text/javascript">
+			$(document).ready(function() {
+				$('textarea').autosize();
+			});
+		</script>
+		
+		<!-- jQuery modal -->
+		<script type="text/javascript" src="/js/jquery.modal.js"></script>		
+				
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="/js/bootstrap.min.js?v=2015.5.31"></script>		
+		<!-- UOJ ico -->
+		<link rel="shortcut icon" href="/img/favicon.ico" />
+        <script src="/js/ngl.js"></script>
+	</head>
+	<body role="document">
+		<div class="container theme-showcase" role="main">
+						<div>
+				<!-- <ul class="nav nav-pills pull-right" role="tablist">
+									<li role="presentation"><a href="https://uoj.ac/login">登录</a></li>
+					<li role="presentation"><a href="https://uoj.ac/register">注册</a></li>
+								</ul> -->
+				<h1 class="hidden-xs">
+                    <a href="/">
+                        <img src="/img/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" />
+                    </a> 
+                    Moira
+                </h1>
+				<h1 class="visible-xs">Moira</h1>
+			</div>
+			
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Home</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/#FAQ">FAQ</a></li>
+				<li><a href="/#citation">Citation</a></li>
+				<!-- <li><a href="/#contact">Contact</a></li> -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+						
+			<div class="uoj-content">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h2>4xtx</h2>
+                        
+                        <p>Submission time: 2022-06-25 22:33</p>
+                    </div>
+                </div>
+                
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-4">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">3D View</h3>
+                            </div>
+                            <div class="panel-body">
+                                <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        NGL.DatasourceRegistry.add(
+                                            "data", new NGL.StaticDatasource( "4xtx/" )
+                                        );
+                                        var stage = new NGL.Stage("viewport");
+                                        stage.setParameters( { backgroundColor: "white", hoverTimeout: -1 } );
+                                        stage.loadFile("data://complex_vdw_bonded.pdb", {defaultRepresentation: true});
+                                    });
+                                    
+                                </script>
+                                <p><div id="viewport" style="width:100%; height:300px;"></div></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-4">
+                            <div class="panel panel-info" id="citation">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title">Trajectory View</h3>
+                                </div>
+                                <div class="panel-body">
+                                    <script>
+                                        document.addEventListener("DOMContentLoaded", function () {
+                                            NGL.DatasourceRegistry.add(
+                                                "data", new NGL.StaticDatasource( "4xtx/" )
+                                            );
+                                            var stage = new NGL.Stage("viewport2");
+                                            stage.setParameters( { backgroundColor: "white", hoverTimeout: -1 } );
+                                            // stage.loadFile("data://complex_vdw_bonded.pdb", {defaultRepresentation: true});
+                                            // stage.loadFile("data://md_1u19_trj.gro", {
+                                            // asTrajectory: true,
+                                            // sele: "50-100"
+                                            // }).then(function (o) {
+                                            // o.addTrajectory()
+                                            // o.addRepresentation("cartoon")
+                                            // o.addRepresentation("helixorient")
+                                            // o.addRepresentation("line", {
+                                            //     sele: "not hydrogen and sidechainAttached"
+                                            // })
+                                            // stage.autoView()
+                                            // })
+                                            stage.loadFile("data://DPDP.pdb").then(function (o) {
+                                            o.addRepresentation("licorice")
+                                            o.autoView()
+
+                                            NGL.autoLoad("data://DPDP.nc").then(function (frames) {
+                                                o.addTrajectory(frames)
+                                            })
+                                            })
+                                        });
+                                        
+                                    </script>
+                                    <p><div id="viewport2" style="width:100%; height:300px;"></div></p>
+                                    <p>just an example, TODO: view traj in 3D (prmtop?)</p>
+                                </div>
+                            </div>
+                        </div>
+                    <div class="col-sm-12 col-md-4">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Overall</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>for example</p>
+                                <p><table class="table table-striped">
+                                    <thead>
+                                      <tr>
+                                        <th>Criterion</th>
+                                        <th>Score</th>
+                                        <th>Result</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <td>RMSD</td>
+                                        <td>3.22</td>
+                                        <td><span class="label label-success">Good</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td>MMPBSA</td>
+                                        <td>0.23</td>
+                                        <td><span class="label label-info">Medium</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td>Vina</td>
+                                        <td>2.33</td>
+                                        <td><span class="label label-success">Good</span></td>
+                                      </tr>
+                                      <tr>
+                                        <td>PLIP</td>
+                                        <td>-2.33</td>
+                                        <td><span class="label label-danger">Bad</span></td>
+                                      </tr>
+                                    </tbody>
+                                  </table></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-7">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Trajectory RMSD</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/traj.png" width="100%" height="100%"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Trajectory RMSD (12 periods)</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/traj_12.png" width="100%" height="100%"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-7">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Trajectory RMSF</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/rmsf.png" width="100%" height="100%"></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-md-5">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Trajectory MMPBSA</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/mmpbsa_traj.png" width="100%" height="100%"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">MMPBSA</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/mmpbsa.png" width="100%" height="100%"></p>
+                                <p> TODO 做一个开关切换 static/dynamic last5ns or 全程</p>
+                                <p> TODO 其他统计量也可以类似处理</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">Dynamic Local Interaction (PLIP)</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p><img src="/4xtx/plip.png" width="100%" height="100%"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+            
+						<div class="uoj-footer">
+				<p>footer~</p>
+                <p>TODO: optional, replace matplotlib with echarts</p>
+			</div>
+			            					</div>
+		<!-- /container -->
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>Job status - MD Dock Suite</title>
+		
+		<script type="text/javascript">backend = 'http://127.0.0.1'</script>
+
+		<!-- Bootstrap core CSS -->
+		<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css?v=2015.5.31" />		<!-- Bootstrap theme -->
+		<link type="text/css" rel="stylesheet" href="/css/bootstrap-theme.min.css?v=2015.5.31" />
+		<!-- Custom styles for this template -->
+		<link type="text/css" rel="stylesheet" href="/css/uoj-theme.css?v=2022.01.16" />		
+		<!-- jQuery (necessary for Bootstrap\'s JavaScript plugins) -->
+		<script type="text/javascript" src="/js/jquery.min.js"></script>		
+		<!-- jQuery autosize -->
+		<script type="text/javascript" src="/js/jquery.autosize.min.js"></script>		<script type="text/javascript">
+			$(document).ready(function() {
+				$('textarea').autosize();
+			});
+		</script>
+		
+		<!-- jQuery modal -->
+		<script type="text/javascript" src="/js/jquery.modal.js"></script>		
+				
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script type="text/javascript" src="/js/bootstrap.min.js?v=2015.5.31"></script>		
+		<!-- UOJ ico -->
+		<link rel="shortcut icon" href="/img/favicon.ico" />
+	</head>
+	<body role="document">
+		<div class="container theme-showcase" role="main">
+						<div>
+				<!-- <ul class="nav nav-pills pull-right" role="tablist">
+									<li role="presentation"><a href="https://uoj.ac/login">登录</a></li>
+					<li role="presentation"><a href="https://uoj.ac/register">注册</a></li>
+								</ul> -->
+				<h1 class="hidden-xs">
+                    <a href="/">
+                        <img src="/img/logo_small.png" alt="Logo" class="img-rounded" style="width:39px; height:39px;" />
+                    </a> 
+                    MD Dock Suite
+                </h1>
+				<h1 class="visible-xs">MD Dock Suite</h1>
+			</div>
+			
+			<div class="navbar navbar-default" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="/">Home</a>
+		</div>
+		<div class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="/#FAQ">FAQ</a></li>
+				<li><a href="/#citation">Citation</a></li>
+				<!-- <li><a href="/#contact">Contact</a></li> -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
+</div>
+						
+			<div class="uoj-content">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <h2>Job Status</h2>
+                        
+                        <form class="navbar-form navbar-left">
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Your Job ID">
+                            </div>
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12 col-md-12">
+                        <div class="panel panel-info" id="citation">
+                            <div class="panel-heading">
+                                <h3 class="panel-title">job_id_string</h3>
+                            </div>
+                            <div class="panel-body">
+                                <p>some job details, submit time , queue lenghth, time to delete...</p>
+                                <h3><span class="label label-info">Queuing...</span></h3>
+                                <h3><span class="label label-info">Processing...</span></h3>
+                                <h3><span class="label label-success">Finished</span></h3>
+                                <h3><span class="label label-danger">Failed</span></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+            
+						<div class="uoj-footer">
+				<p>footer~</p>
+			</div>
+			            					</div>
+		<!-- /container -->
+	</body>
+</html>
